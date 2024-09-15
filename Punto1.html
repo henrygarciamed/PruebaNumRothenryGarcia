@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href=".//Styless/StylesPunto1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ingrese dos números</h1>
+        <div class="inputs">
+            <input type="number" id="A" class="input-box" placeholder="0">
+            <span>+</span>
+            <input type="number" id="B" class="input-box" placeholder="0">
+            <span>=</span>
+            <input type="number" id="C" class="input-box" placeholder="0">
+        </div>
+        <div class="button-container">
+            <button class="btn btn-active" onclick="calcular()">Calcular</button>
+            <button class="btn" onclick="reiniciar()">Reiniciar</button>
+            <a class="btn" href="Portada.html">Volver</a>
+        </div>
+        
+    </div>
+
+    <script>
+        // Función para calcular el valor faltante según la ecuación
+        function calcular() {
+            // Obtenemos los valores de A, B y C desde los inputs. Si están vacíos, se toman como null
+            const NumA = parseFloat(document.getElementById('A').value) || null;
+            const NumB = parseFloat(document.getElementById('B').value) || null;
+            const NumC = parseFloat(document.getElementById('C').value) || null;
+
+            // Comprobamos qué valor es null y calculamos el faltante usando la ecuación
+            if (NumA === null && NumB !== null && NumC !== null) {
+                // Calcular A: A^2 = C^2 - B^2, luego A = sqrt(C^2 - B^2)
+                const ResultadoA = Math.sqrt(Math.pow(NumC, 2)) - Math.pow(NumB, 2);
+                if (!isNaN(ResultadoA)) {
+                    document.getElementById('A').value = ResultadoA;
+                } else {
+                    alert('No es posible calcular A. Verifica los valores ingresados.');
+                }
+            } else if (NumB === null && NumA !== null && NumC !== null) {
+                // Calcular B: B^2 = C^2 - A^2, luego B = sqrt(C^2 - A^2)
+                const ResultadoB = Math.pow(NumC, 2) - Math.pow(NumA, 2);
+                if (!isNaN(ResultadoB)) {
+                    document.getElementById('B').value = Math.sqrt(ResultadoB,2);
+                } else {
+                    alert('No es posible calcular B. Verifica los valores ingresados.');
+                }
+            } else if (NumC === null && NumA !== null && NumB !== null) {
+                // Calcular C: C^2 = A^2 + B^2, luego C = sqrt(A^2 + B^2)
+                const ResultadoC = Math.sqrt(Math.pow(NumA, 2) + Math.pow(NumB, 2));
+                if (!isNaN(ResultadoC)) {
+                    document.getElementById('C').value = ResultadoC;
+                } else {
+                    alert('No es posible calcular C. Verifica los valores ingresados.');
+                }
+            } else {
+                // Si no se cumplen las condiciones, mostramos una alerta
+                alert('Por favor, deja vacío uno de los valores para calcularlo.');
+            }
+        }
+
+        // Función para reiniciar los campos
+        function reiniciar() {
+            document.getElementById('A').value = '';
+            document.getElementById('B').value = '';
+            document.getElementById('C').value = '';
+        }
+    </script>
+</body>
+</html>

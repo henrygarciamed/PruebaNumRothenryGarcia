@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="/Styless/StylesAdmin.css">
+</head>
+<body>
+    <h1>Gestión de Usuarios</h1>
+    
+    <form id="gestionUsuarios">
+        <input type="hidden" id="indexUsuario" value="">
+        <label for="nuevoUsuario">Nombre de Usuario:</label>
+        <input type="text" id="nuevoUsuario" required>
+        
+        <label for="nuevaPassword">Contraseña:</label>
+        <input type="password" id="nuevaPassword" required>
+        
+        <label for="rol">Rol:</label>
+        <select id="rol">
+            <option value="admin">Administrador</option>
+            <option value="user">Usuario</option>
+        </select>
+        
+        <button type="submit">Guardar Usuario</button>
+    </form>
+    
+    <h2>Lista de Usuarios</h2>
+    <ul id="listaUsuarios">
+        
+    </ul>
+    
+   
+    <a href="/LoginUsers.html" class="button">Salir</a>
+
+    <script src="./Scripts/BdUsuarios.js"></script>
+</body>
+</html>

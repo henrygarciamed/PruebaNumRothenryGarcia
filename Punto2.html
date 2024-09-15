@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y Consultas de Datos</title>
+    <link rel="stylesheet" href="/Styless/Stylespunto2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>PUNTO 2</h2>
+        <h3>Bases de Datos</h3>
+
+        <!-- Formulario de datos -->
+        <form id="formularioDatos">
+            <label for="documento">No. Documento:</label>
+            <input type="text" id="documento" name="documento" required>
+
+            <label for="primerNombre">Primer Nombre:</label>
+            <input type="text" id="primerNombre" name="primerNombre" required>
+
+            <label for="segundoNombre">Segundo Nombre:</label>
+            <input type="text" id="segundoNombre" name="segundoNombre">
+
+            <label for="primerApellido">Primer Apellido:</label>
+            <input type="text" id="primerApellido" name="primerApellido" required>
+
+            <label for="segundoApellido">Segundo Apellido:</label>
+            <input type="text" id="segundoApellido" name="segundoApellido">
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion">
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad">
+
+            <label for="genero">Género:</label>
+            <input type="text" id="genero" name="genero">
+
+            <div class="button-container">
+                <button type="button" class="btn guardar" onclick="guardarDatos()">Guardar</button>
+                <button type="reset" class="btn reiniciar">Reiniciar</button>
+                <button type="button" class="btn consultas" onclick="realizarConsultas()">Consultas</button>
+                
+            </div>
+        </form>
+
+        <!-- Sección de resultados -->
+        <div id="resultados">
+            <!-- Los resultados de las consultas se mostrarán aquí -->
+        </div>
+    </div>
+
+    <script src="/Scripts/Punto2.js"></script>
+</body>
+</html>
