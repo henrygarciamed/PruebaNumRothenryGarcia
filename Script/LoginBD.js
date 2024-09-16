@@ -42,4 +42,5 @@ IncioSesion.addEventListener('submit', (event) => {
     } else {
         alert('Usuario o contraseña incorrectos');
     }
+    
 });
